@@ -1,21 +1,45 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-        <!-- <div class="container-fluid"> -->
-        <a class="navbar-brand" href="#">Perpusku</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link" aria-current="page" href="/">Home</a>
-                <a class="nav-link" href="/pages/about">Books</a>
-                <a class="nav-link" href="/buku">Buku</a>
-                <a class="nav-link" href="/pages/contact">Contact</a>
-                <a class="nav-link" href="#">Sign In</a>
-                <a class="nav-link" href="#">Sign Up</a>
-                <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
-            </div>
-        </div>
-        <!-- </div> -->
+<nav class="navbar navbar-expand-lg shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#">PerpusKu</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="nav nav-pills ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/about">Books</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/buku">Buku</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sign In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sign Up</a>
+        </li>
+      </ul>
     </div>
+  </div>
 </nav>
+
+<script>
+  // Dapatkan alamat URL saat ini
+  const currentPath = window.location.pathname;
+
+  // Dapatkan semua tautan navigasi
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  // Loop melalui setiap tautan navigasi
+  navLinks.forEach(link => {
+    // Periksa apakah atribut href dari tautan cocok dengan alamat URL saat ini
+    if (link.getAttribute('href') === currentPath) {
+      // Tambahkan kelas active jika cocok
+      link.classList.add('active');
+    }
+  });
+</script>
+
