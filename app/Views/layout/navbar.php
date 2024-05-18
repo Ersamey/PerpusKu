@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg shadow-sm">
   <div class="container">
     <a class="navbar-brand" href="#">PerpusKu</a>
@@ -6,9 +5,6 @@
       <ul class="nav nav-pills ms-auto">
         <li class="nav-item">
           <a class="nav-link" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/pages/about">Books</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/buku">Buku</a>
@@ -43,4 +39,3 @@
     }
   });
 </script>
-
