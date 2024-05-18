@@ -3,17 +3,19 @@
 namespace App\Controllers;
 
 use App\Models\BukuModel;
+use App\Models\KetersediaanModel;
 
 class Buku extends BaseController
 {
     protected $bukuModel;
+    protected $ketersediaanModel;
     public function __construct()
     {
         $this->bukuModel = new BukuModel();
+        $this->ketersediaanModel = new KetersediaanModel();
     }
     public function index()
     {
-        // $buku = $this->bukuModel->findAll();
         $data = [
             'title' => 'Buku | Perpusku',
             'buku' => $this->bukuModel->getBuku()
@@ -27,7 +29,8 @@ class Buku extends BaseController
     {
         $data = [
             'title' => 'Detail Buku',
-            'buku' => $this->bukuModel->getBuku($slug)
+            'buku' => $this->bukuModel->getBuku($slug),
+            'tersedia' => $this->ketersediaanModel->getAll($slug)
         ];
         return view('buku/detail', $data);
     }
