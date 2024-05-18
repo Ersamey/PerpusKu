@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg shadow-sm">
   <div class="container">
-    <a class="navbar-brand" href="#">PerpusKu</a>
+    <a class="navbar-brand" href="/">PerpusKu</a>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="nav nav-pills ms-auto">
         <li class="nav-item">
@@ -13,7 +13,7 @@
           <a class="nav-link" href="/pages/contact">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Sign In</a>
+          <a class="nav-link" href="/login">Sign In</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Sign Up</a>
