@@ -16,7 +16,7 @@
           <a class="nav-link" href="/login">Sign In</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Sign Up</a>
+          <a class="nav-link" href="/register">Sign Up</a>
         </li>
       </ul>
     </div>

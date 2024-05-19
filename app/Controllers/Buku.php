@@ -4,15 +4,19 @@ namespace App\Controllers;
 
 use App\Models\BukuModel;
 use App\Models\KetersediaanModel;
+use App\Models\ReviewModel;
 
 class Buku extends BaseController
 {
     protected $bukuModel;
     protected $ketersediaanModel;
+    protected $reviewModel;
+
     public function __construct()
     {
         $this->bukuModel = new BukuModel();
         $this->ketersediaanModel = new KetersediaanModel();
+        $this->reviewModel = new ReviewModel();
     }
     public function index()
     {
@@ -30,7 +34,8 @@ class Buku extends BaseController
         $data = [
             'title' => 'Detail Buku',
             'buku' => $this->bukuModel->getBuku($slug),
-            'tersedia' => $this->ketersediaanModel->getAll($slug)
+            'tersedia' => $this->ketersediaanModel->getAll($slug),
+            'komentar' => $this->reviewModel->getAll($slug)
         ];
 
         // // jika buku tidak ada di tabel

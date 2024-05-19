@@ -21,9 +21,26 @@
                             <?php endforeach; ?>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
+        <div class="card" style="width: 50rem;">
+            <h5 class="card-header">Review</h5>
+            <div class="card-body">
+                <?php foreach ($komentar as $k) : ?>
+                    <div class="card">
+                        <h5 class="card-title"><?= $k['username']; ?></h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><?= $k['email']; ?></h6> <!-- ini boleh di hapus kalo gk perlu -->
+                        <p class="card-text"><?= $k['review']; ?></p>
+                    </div>
+                <?php endforeach; ?>
+                <a href="/review/<?= $k['buku_id']; ?>" class="card-link btn btn-secondary mt-3">Tambahkan Review</a>
+                <!-- <a href="#" class="card-link">Another link</a> -->
+            </div>
+        </div>
+
     </div>
+</div>
 </div>
 <?= $this->endSection(); ?>

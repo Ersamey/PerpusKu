@@ -1,5 +1,5 @@
 <?php
-
+//sebenernya ini ga di pakai, cuma buat cek tampilan aja
 namespace App\Controllers;
 
 use App\Models\KetersediaanModel;
