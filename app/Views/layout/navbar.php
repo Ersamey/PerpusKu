@@ -12,12 +12,18 @@
         <li class="nav-item">
           <a class="nav-link" href="/pages/contact">Contact</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/login">Sign In</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/register">Sign Up</a>
-        </li>
+        <?php if (!logged_in()) : ?>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/register">Sign Up</a>
+          </li>
+        <?php else : ?>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+          </li>
+        <?php endif; ?>
       </ul>
     </div>
   </div>
