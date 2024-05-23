@@ -20,6 +20,7 @@ class Buku extends BaseController
     }
     public function index()
     {
+
         $data = [
             'title' => 'Buku | Perpusku',
             'buku' => $this->bukuModel->getBuku()
@@ -35,7 +36,8 @@ class Buku extends BaseController
             'title' => 'Detail Buku',
             'buku' => $this->bukuModel->getBuku($slug),
             'tersedia' => $this->ketersediaanModel->getAll($slug),
-            'komentar' => $this->reviewModel->getAll($slug)
+            'komentar' => $this->reviewModel->getAll($slug),
+            'validation' => \Config\Services::validation()
         ];
 
         // // jika buku tidak ada di tabel

@@ -7,6 +7,7 @@ use CodeIgniter\Model;
 class ReviewModel extends Model
 {
     protected $table = 'review';
+    protected $allowedFields = ['user_id', 'buku_id', 'review'];
 
     public function getAll($slug)
     {
@@ -23,7 +24,14 @@ class ReviewModel extends Model
         return $komentar;
     }
 
-    public function tambahReview($id)
+    public function tambahReview($idUser, $idBuku, $review)
     {
+        // $data = [
+        //     'user_id' => $idUser,
+        //     'buku_id' => $idBuku,
+        //     'review' => $review
+        // ];
+        // $this->db->table('review')->insert($data);
+        dd($this->request->getVar());
     }
 }
