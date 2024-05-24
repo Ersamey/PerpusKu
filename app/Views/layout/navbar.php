@@ -19,9 +19,11 @@
           <li class="nav-item">
             <a class="nav-link" href="/register">Sign Up</a>
           </li>
-        <?php else : ?>
+        <?php else :
+          $user = user_id();
+        ?>
           <li class="nav-item">
-            <a class="nav-link" href="/logout">Logout</a>
+            <a class="nav-link" href="/user/<?= $user; ?>">myProfile</a>
           </li>
         <?php endif; ?>
       </ul>

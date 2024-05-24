@@ -6,9 +6,11 @@ class Pages extends BaseController
 {
     public function index()
     {
+        $username = session()->get("username");
         $data = [
             'title' => 'Home | Perpusku',
-            'tes' => ['satu', 'dua', 'tiga']
+            'tes' => ['satu', 'dua', 'tiga'],
+            'username' => $username
         ];
         return view('pages/home', $data);
     }

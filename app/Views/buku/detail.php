@@ -41,14 +41,7 @@
                         <h6 class="card-subtitle mb-2 text-muted"><?= $k['email']; ?></h6> <!-- ini boleh di hapus kalo gk perlu -->
                         <p class="card-text"><?= $k['review']; ?></p>
                     </div>
-                <?php endforeach; ?>
-                <!-- <a href="/review/<?= $k['buku_id']; ?>" class="card-link btn btn-secondary mt-3">Tambahkan Review</a> -->
-                <!-- <a href="#" class="card-link">Another link</a> -->
-                <!-- <a href="#!" class="d-flex align-items-center me-3">
-                    <i class="far fa-comment-dots me-2"></i>
-                    <p class="mb-0">Comment</p>
-                </a> -->
-                <?php
+                <?php endforeach;
                 $user_id = user_id();
                 $buku_id = $buku['id_buku'];
                 ?>
@@ -60,7 +53,6 @@
                             <div class=" d-flex flex-start w-100">
                                 <div data-mdb-input-init class="form-outline w-100">
                                     <textarea class="form-control" name="review" id="review" rows="4" placeholder="Tuliskan komentar anda!" style="background: #fff;"></textarea>
-                                    <!-- <label class="form-label" for="textAreaExample">Message</label> -->
                                 </div>
                             </div>
                         </div>

@@ -38,4 +38,33 @@ class Review extends BaseController
         // return redirect()->to('/buku/' . $buku["slug"]);
         return redirect()->to('/buku/' . $buku["slug"]);
     }
+
+    public function myReview($id_user)
+    {
+        $result = $this->reviewModel->getReview($id_user);
+        $data = [
+            'title' => 'MyProfile',
+            'review' => $result
+        ];
+
+        return view('user/index', $data);
+    }
+
+    public function delete($id_review)
+    {
+        $ripiu = $this->reviewModel->getReviewById($id_review);
+        $this->reviewModel->delete($id_review);
+        session()->setFlashdata('pesan', 'Review berhasil dihapus!');
+        return redirect()->to('/user/' . $ripiu['user_id']);
+    }
+
+    public function edit()
+    {
+        $this->reviewModel->save([
+            'id_review' => $this->request->getVar('id_review'),
+            'review' => $this->request->getVar('review')
+        ]);
+        session()->setFlashdata('pesan', 'Review berhasil diubah!');
+        return redirect()->to('/user/' . $this->request->getVar('user_id'));
+    }
 }

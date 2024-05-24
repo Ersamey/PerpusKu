@@ -7,6 +7,11 @@
   <div class="container text-left">
     <div class="row justify-content-around">
       <div class="col-6">
+        <?php if (logged_in()) :
+          $username = user()->username;
+        ?>
+          <h1 class="display-4 gradient-text-welcome">Hallo, <?= $username; ?></h1>
+        <?php endif; ?>
         <h1 class="display-4 gradient-text-welcome">Welcome to</h1>
         <h1 class="display-4 text-perpusku">Perpusku</h1>
         <p class="mt-4">PerpusKu adalah salah satu website yang terdiri dari sekumpulan </p>

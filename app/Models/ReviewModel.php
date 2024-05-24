@@ -7,6 +7,8 @@ use CodeIgniter\Model;
 class ReviewModel extends Model
 {
     protected $table = 'review';
+    // set $primaryKey = 'id_review';
+    protected $primaryKey = 'id_review';
     protected $allowedFields = ['user_id', 'buku_id', 'review'];
 
     public function getAll($slug)
@@ -26,12 +28,21 @@ class ReviewModel extends Model
 
     public function tambahReview($idUser, $idBuku, $review)
     {
-        // $data = [
-        //     'user_id' => $idUser,
-        //     'buku_id' => $idBuku,
-        //     'review' => $review
-        // ];
-        // $this->db->table('review')->insert($data);
         dd($this->request->getVar());
+    }
+
+    public function getReview($id_user)
+    {
+
+        $builder = $this->table('review');
+        $builder->join('buku', 'buku.id_buku = review.buku_id');
+        $builder->where('user_id', $id_user);
+        $join = $builder->get()->getResultArray();
+        return $join;
+    }
+
+    public function getReviewById($id_review)
+    {
+        return $this->db->table('review')->where('id_review', $id_review)->get()->getRowArray();
     }
 }
