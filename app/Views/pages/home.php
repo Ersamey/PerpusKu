@@ -20,7 +20,7 @@
       </div>
 
       <div class="col-4 pt-2">
-        <img src="img/home.png" alt="home" width="450" height="400">
+        <img src="<?= base_url() ?>/img/home.png" alt="home" width="450" height="400">
       </div>
     </div>
   </div>
