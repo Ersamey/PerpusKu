@@ -95,8 +95,8 @@
                                             }
                                         </script>
                                         <div class="float-end mt-2 pt-1">
-                                            <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-sm">Edit comment</button>
-                                            <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary btn-sm">Cancel</button>
+                                            <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-sm">Simpan</button>
+                                            <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary btn-sm">Batal</button>
                                         </div>
                                     </form>
                                 </div>

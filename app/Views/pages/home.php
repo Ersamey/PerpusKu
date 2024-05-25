@@ -18,9 +18,8 @@
         <p class="mt-">perpustakaan tempat menyediakan buku di wilayah kota Bandung </p>
         <a class="btn mt-4 btn-jelajah " href="/buku" role="button">Jelajahi sekarang!</a>
       </div>
-
       <div class="col-4 pt-2">
-        <img src="img/home.png" alt="home" width="450" height="400">
+        <img src="<?= base_url() ?>/img/home.png" alt="home" width="450" height="400">
       </div>
     </div>
   </div>

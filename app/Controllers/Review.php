@@ -47,7 +47,7 @@ class Review extends BaseController
             'review' => $result
         ];
 
-        return view('user/index', $data);
+        return view('/pages/user/index', $data);
     }
 
     public function delete($id_review)
@@ -60,6 +60,15 @@ class Review extends BaseController
 
     public function edit()
     {
+        if (!$this->validate([
+            'review' => [
+                'rules' => 'required'
+            ]
+        ])) {
+            $validation = \Config\Services::validation();
+            return redirect()->to('/user/' . $this->request->getVar('user_id'))->with('validation', $validation);
+        }
+
         $this->reviewModel->save([
             'id_review' => $this->request->getVar('id_review'),
             'review' => $this->request->getVar('review')
