@@ -19,9 +19,14 @@
           <li class="nav-item">
             <a class="nav-link" href="/register">Sign Up</a>
           </li>
-        <?php else :
+          <?php else :
           $user = user_id();
-        ?>
+          if (in_groups('admin')) : ?>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin">Users</a>
+            </li>
+          <?php endif;
+          ?>
           <li class="nav-item">
             <a class="nav-link" href="/user/<?= $user; ?>">myProfile</a>
           </li>

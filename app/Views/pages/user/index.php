@@ -45,7 +45,7 @@
                     </tr>
                 </table>
             </div>
-            <!-- myReview -->
+            <!-- myReview
             <div class="komentar">
                 <?php $i = 1; ?>
                 <?php if (session()->getFlashdata('pesan')) : ?>
@@ -91,7 +91,7 @@
                                 </div>
                             </td>
                             <td>
-                                <button class="btn btn-warning" onclick="showForm('sembunyi-<?= $r['id_review']; ?>')" class="mt-3">Edit review</button>
+                                <button class="btn btn-warning" onclick="showForm('sembunyi-<?= $r['id_review']; ?>')" class="mt-3">Edit </button>
 
                                 <form action="/user/<?= $r['id_review']; ?>" method="post">
                                     <?= csrf_field(); ?>
@@ -121,6 +121,6 @@
 
             </div>
 
+        </div> -->
         </div>
-    </div>
-    <?= $this->endSection(); ?>
+        <?= $this->endSection(); ?>

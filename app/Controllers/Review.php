@@ -53,20 +53,23 @@ class Review extends BaseController
     public function delete($id_review)
     {
         $ripiu = $this->reviewModel->getReviewById($id_review);
+        $buku = $this->reviewModel->db->table('buku')->select('slug')->where('id_buku', $ripiu['buku_id'])->get()->getRowArray();
         $this->reviewModel->delete($id_review);
         session()->setFlashdata('pesan', 'Review berhasil dihapus!');
-        return redirect()->to('/user/' . $ripiu['user_id']);
+        return redirect()->to('/buku/' . $buku["slug"]);
     }
 
     public function edit()
     {
+        $review = $this->reviewModel->getReviewById($this->request->getVar('id_review'));
+        $buku = $this->reviewModel->db->table('buku')->select('slug')->where('id_buku', $review['buku_id'])->get()->getRowArray();
         if (!$this->validate([
             'review' => [
                 'rules' => 'required'
             ]
         ])) {
             $validation = \Config\Services::validation();
-            return redirect()->to('/user/' . $this->request->getVar('user_id'))->with('validation', $validation);
+            return redirect()->to('/buku/' . $buku["slug"])->with('validation', $validation);
         }
 
         $this->reviewModel->save([
@@ -74,6 +77,6 @@ class Review extends BaseController
             'review' => $this->request->getVar('review')
         ]);
         session()->setFlashdata('pesan', 'Review berhasil diubah!');
-        return redirect()->to('/user/' . $this->request->getVar('user_id'));
+        return redirect()->to('/buku/' . $buku["slug"]);
     }
 }
