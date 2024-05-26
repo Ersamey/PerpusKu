@@ -2,7 +2,7 @@
   width: 100px;
 }
 
-.table>tbody>tr>* {
+.table > tbody > tr > * {
   vertical-align: middle;
 }
 
@@ -16,20 +16,16 @@
 
 .nav-link {
   color: black;
-  /* Default color */
-  /* Add any other styles you want */
 }
 
 .nav-link:hover,
 .nav-link:focus,
 .nav-link:active {
   color: blue;
-  /* Color when hovered or clicked */
 }
 
 .nav-link.active {
   color: blue;
-  /* Color for active link */
 }
 
 .home {
@@ -37,7 +33,7 @@
 }
 
 .gradient-text-welcome {
-  background: linear-gradient(#000000, #010d5d);
+  background: linear-gradient(#000000, #031794);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
@@ -60,4 +56,55 @@
   top: 4rem;
   width: 450px;
   height: 450px;
+}
+
+.label {
+  padding-top: 60px;
+}
+
+.icon-link img {
+  margin-right: 10px;
+}
+
+.form-control {
+  background: transparent;
+  border: 2px solid rgb(150, 190, 206);
+}
+
+.btn-contact {
+  padding: 12px 32px;
+  background: #374cde;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #919ef5;
+  font-size: 16px;
+  color: rgb(3, 3, 3);
+  letter-spacing: 1px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 15x;
+  transition: 0.5s, box-shadow 0.5s;
+  margin-bottom: 20px;
+}
+
+.btn-contact:hover {
+  background: #4d63ee;
+  box-shadow: 0 0 20px #4d63ee;
+}
+
+.gradient-text-contact {
+  background: linear-gradient(#000000, #031794);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.text-muted a {
+  color: rgb(7, 7, 7);
+  text-decoration: none;
+}
+
+.text-muted a:hover {
+  color: rgb(148, 178, 243);
 }
