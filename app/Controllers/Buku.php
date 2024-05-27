@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\BukuModel;
 use App\Models\KetersediaanModel;
 use App\Models\ReviewModel;
+use PhpParser\Node\Expr\FuncCall;
 
 class Buku extends BaseController
 {
@@ -39,12 +40,6 @@ class Buku extends BaseController
             'komentar' => $this->reviewModel->getAll($slug),
             'validation' => \Config\Services::validation()
         ];
-
-        // // jika buku tidak ada di tabel
-        // if (empty($data['buku'])) {
-        //     throw new \CodeIgniter\Exceptions\PageNotFoundException('Buku ' . $slug . ' tidak ditemukan.');
-        // } //throw new untuk menampilkan pesan error
-
         return view('buku/detail', $data);
     }
 
@@ -59,14 +54,10 @@ class Buku extends BaseController
 
     public function save()
     {
-        // Ambil semua data input
         $judulArray = $this->request->getVar('judul');
         $pengarangArray = $this->request->getVar('pengarang');
         $tahunArray = $this->request->getVar('tahun');
         $sampulArray = $this->request->getFiles('file');
-
-        // Validasi setiap set data
-
         $validation = \Config\Services::validation();
         foreach ($judulArray as $index => $judul) {
             if (!$this->validate([
@@ -130,8 +121,6 @@ class Buku extends BaseController
                 'pict' => $namaSampul
             ]);
         }
-
-        // Redirect setelah berhasil menyimpan semua data
         return redirect()->to('/buku');
     }
 
@@ -192,7 +181,8 @@ class Buku extends BaseController
     {
         $data = [
             'title' => 'Perpustakaan | Daftar Buku',
-            'list' => $this->ketersediaanModel->ListBukuPerpustakaan(user_id())
+            'list' => $this->ketersediaanModel->ListBukuPerpustakaan(user_id()),
+            'buku' => $this->bukuModel->findAll()
         ];
         return view('perpustakaan/listbuku', $data);
     }

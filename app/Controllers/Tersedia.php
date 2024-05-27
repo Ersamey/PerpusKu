@@ -21,4 +21,27 @@ class Tersedia extends BaseController
         // return view('buku/index', $data);
         return dd($data);
     }
+
+    public function add()
+    {
+        $perpus = $this->ketersediaanModel->getPerpus(user_id());
+        $this->ketersediaanModel->save([
+            'buku_id' => $this->request->getVar('buku_id'),
+            'perpus_id' => $perpus['id_perpus'],
+            'status' => 'Tersedia'
+        ]);
+        //session
+        session()->setFlashdata('pesan', 'Buku berhasil ditambahkan.');
+        return redirect()->to('/perpustakaan/buku');
+    }
+
+    public function editStatus()
+    {
+        $buku = $this->request->getVar('buku_id');
+        $perpus = $this->request->getVar('perpus_id');
+        $status = $this->request->getVar('status');
+        $this->ketersediaanModel->editStatus($buku, $perpus, $status);
+        session()->setFlashdata('pesan', 'Status berhasil diubah.');
+        return redirect()->to('/perpustakaan/buku');
+    }
 }

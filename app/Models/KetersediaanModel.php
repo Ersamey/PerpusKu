@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use AllowDynamicProperties;
 use CodeIgniter\Model;
 
 class KetersediaanModel extends Model
 {
     protected $table = 'ketersediaan';
+    protected $allowedFields = ['buku_id', 'perpus_id', 'status'];
 
     public function getAll($slug)
     {
@@ -27,12 +29,33 @@ class KetersediaanModel extends Model
     public function ListBukuPerpustakaan($perpus_id)
     {
         $listbuku = $this->db->table($this->table);
-        $listbuku->select('perpustakaan.nama, buku.judul, buku.pengarang, ketersediaan.status');
+        $listbuku->select('perpustakaan.nama, perpustakaan.id_perpus, buku.id_buku,buku.judul, buku.pengarang, ketersediaan.status');
         $listbuku->join('perpustakaan', 'ketersediaan.perpus_id = perpustakaan.id_perpus');
         $listbuku->join('buku', 'ketersediaan.buku_id = buku.id_buku');
         $listbuku->where('perpustakaan.user_id', $perpus_id);
+        $listbuku->where('ketersediaan.status', 'Tersedia');
 
         $query = $listbuku->get();
         return $query->getResultArray();
+    }
+
+    public function getPerpus($id)
+    {
+        return $this->db->table('perpustakaan')->where('user_id', $id)->get()->getRowArray();
+    }
+
+    public function editStatus($buku, $perpus, $status)
+    {
+        $this->db->table($this->table)->where('buku_id', $buku)->where('perpus_id', $perpus)->update(['status' => $status]);
+    }
+
+    public function getBuku($id_perpus)
+    {
+        $builder = $this->table('ketersediaan');
+        $builder->join('buku', 'buku.id_buku = ketersediaan.buku_id');
+        $builder->where('perpus_id', $id_perpus);
+        // Select where('status', 'Tersedia');
+        $builder->where('status', 'Tersedia');
+        return $builder->get()->getResultArray();
     }
 }

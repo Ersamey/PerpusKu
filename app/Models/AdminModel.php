@@ -25,7 +25,6 @@ class AdminModel extends Model
     {
         $userId = $data['user_id'];
         $newRole = $data['role'];
-        //update tabel auth_groups_users where user_id = $userId set role_id = $newRole
         $result = $this->db->table('auth_groups_users')
             ->where('user_id', $userId)
             ->update(['group_id' => $newRole]);

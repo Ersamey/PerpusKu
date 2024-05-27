@@ -20,23 +20,13 @@
             <?php if (in_groups('admin')) : ?>
                 <a href="/buku/add" class="btn btn-primary">Tambah Buku</a>
             <?php endif; ?>
-            <table class=" table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Sampul</th>
-                        <th scope="col">Judul</th>
-                        <th scope="col">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php $i = 1; ?>
-                    <?php foreach ($buku as $b) :  ?>
-                        <tr>
-                            <th scope="row"><?= $i++; ?></th>
-                            <td><img src="/img/<?= $b['pict'] ?>" alt="" class="sampul"></td>
-                            <td><?= $b['judul'] ?></td>
-                            <td>
+            <div class="d-flex flex-wrap">
+                <?php foreach ($buku as $b) :  ?>
+                    <div class="card m-2" style="width: 12rem;">
+                        <img class="card-img-top" src="/img/<?= $b['pict'] ?>" alt="Card image cap">
+                        <div class="card-body d-flex flex-column">
+                            <b class="mb-2"><?= $b['judul'] ?></b>
+                            <div class="mt-auto">
                                 <?php if (in_groups('admin')) : ?>
                                     <form action="/buku/<?= $b['id_buku']; ?>" method="post" style="display:inline;">
                                         <?= csrf_field(); ?>
@@ -45,11 +35,11 @@
                                     </form>
                                 <?php endif; ?>
                                 <a href="/buku/<?= $b['slug']; ?>" class=" btn btn-success">Detail</a>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
         </div>
     </div>
 </div>

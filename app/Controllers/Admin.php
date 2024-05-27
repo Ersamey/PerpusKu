@@ -35,4 +35,10 @@ class Admin extends BaseController
         ];
         return redirect()->to('/admin')->with('success', 'Role berhasil diubah');
     }
+
+    public function delete($id)
+    {
+        $this->adminModel->delete($id);
+        return redirect()->to('/admin')->with('success', 'Data berhasil dihapus');
+    }
 }

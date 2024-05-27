@@ -19,7 +19,9 @@
         } ?>
         <p class="mt-4">PerpusKu adalah salah satu website yang terdiri dari sekumpulan </p>
         <p class="mt-">perpustakaan tempat menyediakan buku di wilayah kota Bandung </p>
-        <a class="btn mt-4 btn-jelajah " href="/buku" role="button">Jelajahi sekarang!</a>
+        <?php if (!in_groups('perpustakaan')) : ?>
+          <a class="btn mt-4 btn-jelajah " href="/buku" role="button">Jelajahi sekarang!</a>
+        <?php endif; ?>
       </div>
       <div class="col-4 pt-2">
         <img src="<?= base_url() ?>/img/home.png" alt="home" width="450" height="400">

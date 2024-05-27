@@ -6,13 +6,15 @@
         <li class="nav-item">
           <a class="nav-link" href="/">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/buku">Buku</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/pages/contact">Contact</a>
-        </li>
-        <?php if (!logged_in()) : ?>
+        <?php if (!in_groups('perpustakaan')) : ?>
+          <li class="nav-item">
+            <a class="nav-link" href="/buku">Buku</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/contact">Contact</a>
+          </li>
+        <?php endif;
+        if (!logged_in()) : ?>
           <li class="nav-item">
             <a class="nav-link" href="/login">Sign In</a>
           </li>

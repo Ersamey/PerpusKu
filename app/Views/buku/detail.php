@@ -14,7 +14,10 @@
                             <h5 class="card-title"><?= $buku['judul']; ?></h5>
                             <p class="card-text"><b>Penulis: </b><?= $buku['pengarang']; ?> - <?= $buku['tahun']; ?></p>
                             <?php foreach ($tersedia as $t) : ?>
-                                <p class="card-text"><b><?= $t['nama']; ?></b></p>
+                                <form action="/perpustakaan/detail" method="post">
+                                    <input type="hidden" name="id_perpus" value="<?= $t['id_perpus']; ?>">
+                                    <button type="submit"><a><b><?= $t['nama']; ?></b></a></button>
+                                </form>
                                 <p class="card-text"><?= $t['alamat']; ?></p>
                             <?php endforeach; ?>
                             <?php if (in_groups('admin')) : ?>
