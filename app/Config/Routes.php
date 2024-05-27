@@ -20,3 +20,4 @@ $routes->post('/review/edit', 'review::edit');
 $routes->get('/user/(:any)', 'Review::myReview/$1');
 $routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
 $routes->get('/admin/index', 'Admin::index', ['filter' => 'role:admin']);
+$routes->post('/admin/save', 'Admin::ubahRole', ['filter' => 'role:admin']);

@@ -11,6 +11,7 @@ class Admin extends BaseController
     {
         $this->adminModel = new AdminModel();
     }
+
     public function index()
     {
 
@@ -20,5 +21,18 @@ class Admin extends BaseController
             'role' => $this->adminModel->getRole()
         ];
         return view('pages/admin/index', $data);
+    }
+
+    public function ubahRole()
+    {
+        $requestData = $this->request->getVar();
+        // Call the model's method and pass the request data
+        $result = $this->adminModel->ubahRole($requestData);
+
+        $data = [
+            'title' => 'Admin | Perpusku',
+            'role' => $result
+        ];
+        return redirect()->to('/admin')->with('success', 'Role berhasil diubah');
     }
 }
