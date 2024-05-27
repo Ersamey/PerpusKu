@@ -17,7 +17,7 @@ class ListBuku extends BaseController
 
         $data = [
             'title' => 'Daftar Buku | Perpusku',
-            'list' => $this->ketersediaanModel->ListBukuPerpustakaan(1)
+            'list' => $this->ketersediaanModel->ListBukuPerpustakaan(user_id())
         ];
         return view('listbuku/index', $data);
     }

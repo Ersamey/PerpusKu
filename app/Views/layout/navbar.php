@@ -12,7 +12,7 @@
             <a class="nav-link" href="/listbuku">Manajemen Buku</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/pages/contact">Profil Perpustakaan</a>
+            <a class="nav-link" href="/info">Profil Perpustakaan</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/logout">Logout</a>

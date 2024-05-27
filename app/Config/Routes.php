@@ -7,6 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Pages::index');
 $routes->get('/listbuku', 'listbuku::index');
+$routes->get('/info', 'ProfilPerpustakaan::index');
 $routes->get('/pages/contact', 'Pages::contact');
 $routes->get('/buku', 'buku::index');
 $routes->get('/buku/(:segment)', 'Buku::detail/$1');
@@ -14,4 +15,3 @@ $routes->get('/buku/(:segment)', 'Buku::detail/$1');
 $routes->get('/review/(:segment)', 'Review::index/$1');
 $routes->post('/review/save', 'review::index');
 $routes->get('/listbuku/buku', 'ListBuku::');
- 
