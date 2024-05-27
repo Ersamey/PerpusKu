@@ -21,3 +21,6 @@ $routes->get('/user/(:any)', 'Review::myReview/$1');
 $routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
 $routes->get('/admin/index', 'Admin::index', ['filter' => 'role:admin']);
 $routes->post('/admin/save', 'Admin::ubahRole', ['filter' => 'role:admin']);
+$routes->get('/perpustakaan', 'Perpustakaan::index', ['filter' => 'role:perpustakaan']);
+$routes->get('/perpustakaan/index', 'Perpustakaan::index', ['filter' => 'role:perpustakaan']);
+$routes->get('/perpustakaan/buku', 'Buku::listbuku', ['filter' => 'role:perpustakaan']);

@@ -25,8 +25,10 @@
             <li class="nav-item">
               <a class="nav-link" href="/admin">Users</a>
             </li>
-          <?php endif;
-          ?>
+          <?php elseif (in_groups('perpustakaan')) : ?>
+            <a class="nav-link" href="/perpustakaan/buku">Manajemen Buku</a>
+            </li>
+          <?php endif; ?>
           <li class="nav-item">
             <a class="nav-link" href="/user/<?= $user; ?>">myProfile</a>
           </li>

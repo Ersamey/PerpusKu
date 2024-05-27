@@ -187,4 +187,13 @@ class Buku extends BaseController
         session()->setFlashdata('pesan', 'Data berhasil diubah.');
         return redirect()->to('/buku');
     }
+
+    public function listbuku()
+    {
+        $data = [
+            'title' => 'Perpustakaan | Daftar Buku',
+            'list' => $this->ketersediaanModel->ListBukuPerpustakaan(user_id())
+        ];
+        return view('perpustakaan/listbuku', $data);
+    }
 }
