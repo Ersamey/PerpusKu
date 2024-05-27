@@ -3,13 +3,16 @@
 namespace App\Controllers;
 
 use App\Models\ReviewModel;
+use App\Models\PerpustakaanModel;
 
 class Review extends BaseController
 {
     protected $reviewModel;
+    protected $perpustakaanModel;
     public function __construct()
     {
         $this->reviewModel = new ReviewModel();
+        $this->perpustakaanModel = new PerpustakaanModel();
     }
 
     public function index()
@@ -44,7 +47,8 @@ class Review extends BaseController
         $result = $this->reviewModel->getReview($id_user);
         $data = [
             'title' => 'MyProfile',
-            'review' => $result
+            'review' => $result,
+            'perpustakaan' => $this->perpustakaanModel->perpusinfo(user_id())
         ];
 
         return view('/pages/user/index', $data);

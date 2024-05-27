@@ -17,7 +17,9 @@
 
 
             <h1 class=" mt-2">Daftar Buku</h1>
-            <a href="/buku/add" class="btn btn-primary">Tambah Buku</a>
+            <?php if (in_groups('admin')) : ?>
+                <a href="/buku/add" class="btn btn-primary">Tambah Buku</a>
+            <?php endif; ?>
             <table class=" table">
                 <thead>
                     <tr>

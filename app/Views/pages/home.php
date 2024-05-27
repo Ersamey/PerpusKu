@@ -14,6 +14,9 @@
         <?php endif; ?>
         <h1 class="display-4 gradient-text-welcome">Welcome to</h1>
         <h1 class="display-4 text-perpusku">Perpusku</h1>
+        <?php if (in_groups('perpustakaan')) {
+          $nama = user()->username;
+        } ?>
         <p class="mt-4">PerpusKu adalah salah satu website yang terdiri dari sekumpulan </p>
         <p class="mt-">perpustakaan tempat menyediakan buku di wilayah kota Bandung </p>
         <a class="btn mt-4 btn-jelajah " href="/buku" role="button">Jelajahi sekarang!</a>
