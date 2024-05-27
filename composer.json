@@ -2,6 +2,8 @@
     "name": "codeigniter4/appstarter",
     "description": "CodeIgniter4 starter app",
     "license": "MIT",
+    "minimum-stability": "beta",
+    "prever-stable": true,
     "type": "project",
     "homepage": "https://codeigniter.com",
     "support": {

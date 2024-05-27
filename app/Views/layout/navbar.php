@@ -1,32 +1,58 @@
 <nav class="navbar navbar-expand-lg shadow-sm">
-  <div class="container">
-    <a class="navbar-brand" href="/">PerpusKu</a>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="nav nav-pills ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/buku">Buku</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/pages/contact">Contact</a>
-        </li>
-        <?php if (!logged_in()) : ?>
+  <!-- User Perpustakaan-->
+  <?php if (in_groups('perpustakaan')) : ?>
+    <div class="container">
+      <a class="navbar-brand" href="/">PerpusKu</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="nav nav-pills ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/login">Sign In</a>
+            <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/register">Sign Up</a>
+            <a class="nav-link" href="/listbuku">Manajemen Buku</a>
           </li>
-        <?php else : ?>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/contact">Profil Perpustakaan</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="/logout">Logout</a>
           </li>
-        <?php endif; ?>
-      </ul>
+        </ul>
+      </div>
     </div>
-  </div>
+  <?php endif; ?>
+
+  <!--User Navbar-->
+  <?php if (!in_groups('perpustakaan')) : ?>
+    <div class="container">
+      <a class="navbar-brand" href="/">PerpusKu</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="nav nav-pills ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/buku">Buku</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/contact">Contact</a>
+          </li>
+          <?php if (!logged_in()) : ?>
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Sign In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/register">Sign Up</a>
+            </li>
+          <?php else : ?>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+          <?php endif; ?>
+        </ul>
+      </div>
+    </div>
+  <?php endif; ?>
 </nav>
 
 <script>
