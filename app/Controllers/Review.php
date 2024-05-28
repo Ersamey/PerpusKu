@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\ReviewModel;
 use App\Models\PerpustakaanModel;
+use App\Models\BukuModel;
 
 class Review extends BaseController
 {
@@ -17,14 +18,10 @@ class Review extends BaseController
 
     public function index()
     {
-        //validasi
         $buku = $this->reviewModel->db->table('buku')->select('slug')->where('id_buku', $this->request->getVar('buku_id'))->get()->getRowArray();
         if (!$this->validate([
             'review' => [
-                'rules' => 'required' //,
-                // 'errors' => [
-                //     'required' => 'Review harus diisi.'
-                // ]
+                'rules' => 'required'
             ]
         ])) {
             $validation = \Config\Services::validation();
@@ -37,9 +34,8 @@ class Review extends BaseController
         ]);
 
         session()->setFlashdata('pesan', 'Review berhasil ditambahkan!');
-        //ambil tabel buku ketika id_buku == buku_id
-        // return redirect()->to('/buku/' . $buku["slug"]);
-        return redirect()->to('/buku/' . $buku["slug"]);
+
+        return view('/buku/review');
     }
 
     public function myReview($id_user)
@@ -60,7 +56,8 @@ class Review extends BaseController
         $buku = $this->reviewModel->db->table('buku')->select('slug')->where('id_buku', $ripiu['buku_id'])->get()->getRowArray();
         $this->reviewModel->delete($id_review);
         session()->setFlashdata('pesan', 'Review berhasil dihapus!');
-        return redirect()->to('/buku/' . $buku["slug"]);
+
+        return view('/buku/review');
     }
 
     public function edit()
@@ -81,6 +78,7 @@ class Review extends BaseController
             'review' => $this->request->getVar('review')
         ]);
         session()->setFlashdata('pesan', 'Review berhasil diubah!');
-        return redirect()->to('/buku/' . $buku["slug"]);
+
+        return view('/buku/review');
     }
 }

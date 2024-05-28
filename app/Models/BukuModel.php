@@ -19,4 +19,9 @@ class BukuModel extends Model
 
         return $this->where(['slug' => $slug])->first();
     }
+
+    public function getSlug($id)
+    {
+        return $this->where(['id_buku' => $id])->first();
+    }
 }

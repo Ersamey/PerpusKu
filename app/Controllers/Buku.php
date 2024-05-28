@@ -5,7 +5,6 @@ namespace App\Controllers;
 use App\Models\BukuModel;
 use App\Models\KetersediaanModel;
 use App\Models\ReviewModel;
-use PhpParser\Node\Expr\FuncCall;
 
 class Buku extends BaseController
 {
@@ -38,7 +37,8 @@ class Buku extends BaseController
             'buku' => $this->bukuModel->getBuku($slug),
             'tersedia' => $this->ketersediaanModel->getAll($slug),
             'komentar' => $this->reviewModel->getAll($slug),
-            'validation' => \Config\Services::validation()
+            'validation' => \Config\Services::validation(),
+            'perpus' => $this->ketersediaanModel->getallperpus()
         ];
         return view('buku/detail', $data);
     }
@@ -185,5 +185,17 @@ class Buku extends BaseController
             'buku' => $this->bukuModel->findAll()
         ];
         return view('perpustakaan/listbuku', $data);
+    }
+
+    public function getallKomen($slug)
+    {
+        $result = $this->reviewModel->getAll($slug);
+        $data = [
+            'title' => 'Review',
+            'komentar' => $result,
+            'buku' => $this->bukuModel->getBuku($slug)
+        ];
+
+        return view('/buku/review', $data);
     }
 }

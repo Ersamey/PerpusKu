@@ -3,13 +3,16 @@
 namespace App\Controllers;
 
 use App\Models\KetersediaanModel;
+use App\Models\BukuModel;
 
 class Tersedia extends BaseController
 {
     protected $ketersediaanModel;
+    protected $bukuModel;
     public function __construct()
     {
         $this->ketersediaanModel = new KetersediaanModel();
+        $this->bukuModel = new BukuModel();
     }
 
     public function index($slug)
@@ -43,5 +46,17 @@ class Tersedia extends BaseController
         $this->ketersediaanModel->editStatus($buku, $perpus, $status);
         session()->setFlashdata('pesan', 'Status berhasil diubah.');
         return redirect()->to('/perpustakaan/buku');
+    }
+
+    public function tempat()
+    {
+        $slug = $this->bukuModel->getSlug($this->request->getVar('id_buku'));
+        $this->ketersediaanModel->save([
+            'buku_id' => $this->request->getVar('id_buku'),
+            'perpus_id' => $this->request->getVar('id_perpus'),
+            'status' => 'Tersedia'
+        ]);
+        session()->setFlashdata('pesan', 'Tempat berhasil ditambahkan.');
+        return redirect()->to('buku/' . $slug['slug']);
     }
 }

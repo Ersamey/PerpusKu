@@ -44,6 +44,12 @@ class KetersediaanModel extends Model
         return $this->db->table('perpustakaan')->where('user_id', $id)->get()->getRowArray();
     }
 
+    public function getallperpus()
+    {
+        $perpus = $this->db->table('perpustakaan');
+        return $perpus->get()->getResultArray();
+    }
+
     public function editStatus($buku, $perpus, $status)
     {
         $this->db->table($this->table)->where('buku_id', $buku)->where('perpus_id', $perpus)->update(['status' => $status]);

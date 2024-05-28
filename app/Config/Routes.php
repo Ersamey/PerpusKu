@@ -32,3 +32,5 @@ $routes->post('/home/editNama', 'Home::editNama', ['filter' => 'role:perpustakaa
 $routes->post('/home/editAlamat', 'Home::editAlamat', ['filter' => 'role:perpustakaan']);
 $routes->post('/home/addProfile', 'Home::addProfile', ['filter' => 'role:perpustakaan']);
 $routes->post('/perpustakaan/detail', 'Home::perpus');
+$routes->post('/tersedia/tempat', 'Tersedia::tempat', ['filter' => 'role:admin']);
+$routes->get('/komentar/(:segment)', 'Buku::getallKomen/$1');
