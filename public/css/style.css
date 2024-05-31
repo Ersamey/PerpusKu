@@ -122,3 +122,67 @@
   color: inherit;
   text-decoration: none;
 }
+
+/* style=" background-color: #99A1DB; border-color: #99A1DB; */
+.btn.btn-detail {
+  background: #99A1DB;
+  color: #ffffff;
+  border: none;
+}
+
+.tersedia {
+  color: #3F2182;
+}
+
+.plain-button.nama {
+  color: #5669DB;
+
+}
+
+.card-text.alamat {
+  padding-left: 55px;
+}
+
+.center-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 50px;
+  margin-left: 20px;
+  padding-right: 420px;
+}
+
+.card.mt-10 {
+  width: 85vw;
+  height: 90vh;
+  display: block;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.detail {
+  background-image: url("/img/bg-detail.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.btn.btn-detail {
+  border-radius: 40px;
+  /* ukuran perbesar 2kali */
+  padding: 8px 30px;
+}
+
+.btn.btn-warning.editbuku {
+  display: inline;
+  border-radius: 40px;
+}
+
+.btn.btn-success.dropdown-toggle {
+  border-radius: 40px;
+}
