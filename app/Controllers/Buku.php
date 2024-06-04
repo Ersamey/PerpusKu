@@ -20,6 +20,12 @@ class Buku extends BaseController
     }
     public function index()
     {
+        $keyword = $this->request->getVar('keyword');
+        if ($keyword) {
+            $this->bukuModel->search($keyword);
+        } else {
+            $this->bukuModel;
+        }
 
         $data = [
             'title' => 'Buku | Perpusku',

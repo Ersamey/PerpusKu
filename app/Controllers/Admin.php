@@ -14,11 +14,18 @@ class Admin extends BaseController
 
     public function index()
     {
+        // d($this->request->getVar('keyword'));
+        $keyword = $this->request->getVar('keyword');
+        if ($keyword) {
+            $this->adminModel->search($keyword);
+        } else {
+            $this->adminModel;
+        }
 
         $data = [
             'title' => 'Admin | Perpusku',
             'user' => $this->adminModel->getAll(),
-            'role' => $this->adminModel->getRole()
+            'role' => $this->adminModel->getRole(),
         ];
         return view('pages/admin/index', $data);
     }
