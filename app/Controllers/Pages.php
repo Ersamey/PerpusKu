@@ -42,4 +42,12 @@ class Pages extends BaseController
         ];
         return view('pages/contact', $data);
     }
+
+    public function login()
+    {
+        $data = [
+            'title' => 'Login | Perpusku'
+        ];
+        return view('/auth/signIn', $data);
+    }
 }
