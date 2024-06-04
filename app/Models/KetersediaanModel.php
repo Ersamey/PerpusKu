@@ -26,7 +26,7 @@ class KetersediaanModel extends Model
         return $tempat;
     }
 
-    public function ListBukuPerpustakaan($perpus_id)
+    public function ListBukuPerpustakaan($perpus_id, $keyword)
     {
         $listbuku = $this->db->table($this->table);
         $listbuku->select('perpustakaan.nama, perpustakaan.id_perpus, buku.id_buku,buku.judul, buku.pengarang, ketersediaan.status');
@@ -34,7 +34,12 @@ class KetersediaanModel extends Model
         $listbuku->join('buku', 'ketersediaan.buku_id = buku.id_buku');
         $listbuku->where('perpustakaan.user_id', $perpus_id);
         $listbuku->where('ketersediaan.status', 'Tersedia');
-
+        if ($keyword) {
+            $listbuku->groupStart()
+                ->like('buku.judul', $keyword)
+                ->orLike('buku.pengarang', $keyword)
+                ->groupEnd();
+        }
         $query = $listbuku->get();
         return $query->getResultArray();
     }
