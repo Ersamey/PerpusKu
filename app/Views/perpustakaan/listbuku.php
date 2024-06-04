@@ -1,16 +1,19 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
+
+<div class="bg-belakang">
+<div class="listbuku">
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1 class="mt-2">Manajemen Buku</h1>
+        <h1 class="gradient-text mb-3 pt-3"> LIST BUKU</h1>
             <!-- Button to open the form -->
-            <button class="btn btn-primary" onclick="toggleForm()">Tambah Buku</button>
+            <button class="btn-add mb-2" onclick="toggleForm()">Tambah Buku</button>
 
             <div id="bookForm" class="sembunyi" style="display: none;">
+            <h1 class="gradient-text mb-3 pt-1"> DAFTAR BUKU</h1>
                 <div class=" mt-3">
-                    <h2>Daftar Buku</h2>
                     <div class="d-flex flex-wrap">
                         <?php foreach ($buku as $b) : ?>
                             <div class="card m-2" style="width: 10rem;">
@@ -30,7 +33,6 @@
             </div>
 
             <div class="mt-3">
-                <h2>Manajemen Buku</h2>
                 <?php if (session()->getFlashdata('pesan')) : ?>
                     <div class="alert alert-success" role="alert">
                         <?= session()->getFlashdata('pesan'); ?>
@@ -39,7 +41,7 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">ID</th>
                             <th scope="col">Judul</th>
                             <th scope="col">Penulis</th>
                             <th scope="col">Status</th>
@@ -50,7 +52,7 @@
                         <?php $i = 1; ?>
                         <?php foreach ($list as $l) : ?>
                             <tr>
-                                <th scope="row"><?= $i++; ?></th>
+                                <td scope="row"><?= $i++; ?></td>
                                 <td><?= $l['judul'] ?></td>
                                 <td><?= $l['pengarang'] ?></td>
                                 <td><?= $l['status'] ?></td>
@@ -90,6 +92,8 @@
             </div>
         </div>
     </div>
+</div>
+</div>
 </div>
 
 <script>
