@@ -36,3 +36,4 @@ $routes->post('/tersedia/tempat', 'Tersedia::tempat', ['filter' => 'role:admin']
 $routes->get('/komentar/(:segment)', 'Buku::getallKomen/$1');
 $routes->post('/admin', 'Admin::index');
 $routes->post('/buku', 'Buku::index');
+$routes->post('/perpustakaan/buku', 'Buku::listbuku');

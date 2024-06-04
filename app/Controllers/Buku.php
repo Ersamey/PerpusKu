@@ -185,9 +185,12 @@ class Buku extends BaseController
 
     public function listbuku()
     {
+        $keyword = $this->request->getVar('keyword');
+        $list=$this->ketersediaanModel->ListBukuPerpustakaan(user_id(), $keyword);
+
         $data = [
             'title' => 'Perpustakaan | Daftar Buku',
-            'list' => $this->ketersediaanModel->ListBukuPerpustakaan(user_id()),
+            'list' => $list,
             'buku' => $this->bukuModel->findAll()
         ];
         return view('perpustakaan/listbuku', $data);
