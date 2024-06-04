@@ -6,7 +6,7 @@
 <section class="home bg-belakang ">
   <div class="container text-left">
     <div class="row justify-content-around">
-      <div class="col-6">
+      <div class="col-6 pt-4 mt-4">
         <?php if (logged_in()) :
           $username = user()->username;
         ?>
