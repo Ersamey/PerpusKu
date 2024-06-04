@@ -1,11 +1,13 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
+
+<div class="bg-belakang">
+<div class="review"> 
 <div class="container">
     <div class="row">
         <div class="col">
-            <div class="card">
-                <h5 class=" card-header">Review</h5>
+        <h1 class="gradient-text">ULASAN BUKU</h1>
                 <?php if (session()->getFlashdata('pesan')) : ?>
                     <div class="alert alert-success" role="alert">
                         <?= session()->getFlashdata('pesan'); ?>
@@ -13,10 +15,10 @@
                 <?php endif; ?>
                 <div class="card-body">
                     <?php foreach ($komentar as $k) : ?>
-                        <div class="card mt-3">
-                            <h5 class="card-title"><?= $k['username']; ?></h5>
-                            <h6 class="card-subtitle mb-2 text-muted"><?= $k['email']; ?></h6> <!-- ini boleh dihapus jika tidak perlu -->
-                            <p class="card-text"><?= $k['review']; ?></p>
+                        <div class="card-review mt-2">
+                            <h5 class="card-title ml-2"><?= $k['username']; ?></h5>
+                            <h6 class="card-subtitle mb-2 text-muted ml-2"><?= $k['email']; ?></h6> <!-- ini boleh dihapus jika tidak perlu -->
+                            <p class="card-text ml-2"><?= $k['review']; ?></p>
                             <div id="sembunyi-<?= $k['id_review']; ?>" style="display: none;">
                                 <form action="/review/edit" method="post" enctype="multipart/form-data">
                                     <div class="card-footer py-3 border-0">
@@ -45,14 +47,14 @@
                                     <form action="/user/<?= $k['id_review']; ?>" method="post" style="display:inline;">
                                         <?= csrf_field(); ?>
                                         <input type="hidden" name="_method" value="DELETE">
-                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda yakin?');">Delete</button>
+                                        <button type="submit" class="btn btn-danger ml-2 mb-2" onclick="return confirm('Apakah anda yakin?');">Delete</button>
                                     </form>
                                 <?php endif; ?>
                             <?php endif; ?>
                         </div>
                     <?php endforeach; ?>
 
-                    <button onclick="myFunction()" class="mt-3">Tambahkan review</button>
+                    <button onclick="myFunction()" class=" btn-add mt-3">Tambahkan review</button>
                     <div id="myDIV" style="display: none;">
                         <form action="/review/save" method="post" enctype="multipart/form-data">
                             <div class="card-footer py-3 border-0">
@@ -65,8 +67,8 @@
                             <input type="hidden" name="user_id" value="<?= user_id(); ?>">
                             <input type="hidden" name="buku_id" value="<?= $buku['id_buku']; ?>">
                             <div class="float-end mt-2 pt-1">
-                                <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-sm">Post comment</button>
-                                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary btn-sm" onclick="myFunction()">Cancel</button>
+                                <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-sm mb-3">Post comment</button>
+                                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary btn-sm mb-3" onclick="myFunction()">Cancel</button>
                             </div>
                         </form>
                     </div>
@@ -98,5 +100,6 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 <?= $this->endSection(); ?>

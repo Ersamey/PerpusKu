@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg shadow-sm">
+<nav class="navbar navbar-expand-lg shadow-sm fixed-top">
   <div class="container">
     <a class="navbar-brand" href="/">PerpusKu</a>
     <div class="collapse navbar-collapse" id="navbarNav">

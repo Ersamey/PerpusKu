@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <div class="card mt-10">
+                <div class="card mt-9 shadow p-3 mb-4">
                     <div class="row g-0">
                         <div class="col-md-4">
                             <img src="/img/<?= $buku['pict'] ?>" class="img-fluid " alt="...">
@@ -29,10 +29,10 @@
                                     <p class="card-text alamat"><?= $t['alamat']; ?></p>
                                 <?php endforeach; ?>
                                 <div class="center-container">
-                                    <a href="/komentar/<?= $buku['slug']; ?>" class="btn btn-detail">Ulasan</a>
+                                    <a href="/komentar/<?= $buku['slug']; ?>" class="btn btn-detail mr-3">Ulasan</a>
 
                                     <?php if (in_groups('admin')) : ?>
-                                        <a href="/buku/edit/<?= $buku['id_buku']; ?>" class="btn btn-warning editbuku">Edit</a>
+                                        <a href="/buku/edit/<?= $buku['id_buku']; ?>" class="btn btn-warning editbuku mr-3">Edit</a>
                                         <div class="dropdown">
                                             <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 + Lokasi
