@@ -5,9 +5,13 @@
     <div class="row">
         <div class="col">
             <h1>Mau Baca Buku Apa Hari Ini?</h1>
-            <form action="">
-                <input type="text" placeholder="Cari Buku" class="form-control mt-2" style="width: 50%; display: inline;">
-                <button class="btn btn-primary">Search</button>
+            <form action="" method="post">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control mt-2" placeholder="Cari buku" name="keyword">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-primary" name="submit">Search</button>
+                    </div>
+                </div>
             </form>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Autem nihil minus, quasi eum perspiciatis fugiat inventore

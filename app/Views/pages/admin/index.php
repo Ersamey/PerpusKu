@@ -3,13 +3,20 @@
 <?= $this->section('content'); ?>
 <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col-6">
             <h1>User List</h1>
-            <form action="" method="post" class="col mt-3">
-                <input type="text" placeholder="username">
-                <button type="submit" class="btn btn-primary">Search</button>
+            <form action="" method="post">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Masukkan keyword pencariann" name="keyword">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-primary" name="submit">Search</button>
+                    </div>
+                </div>
             </form>
-
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
             <?php if (session()->getFlashdata('success')) : ?>
                 <div class="alert alert-success" role="alert">
                     <?= session()->getFlashdata('success'); ?>

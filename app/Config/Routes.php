@@ -34,3 +34,5 @@ $routes->post('/home/addProfile', 'Home::addProfile', ['filter' => 'role:perpust
 $routes->post('/perpustakaan/detail', 'Home::perpus');
 $routes->post('/tersedia/tempat', 'Tersedia::tempat', ['filter' => 'role:admin']);
 $routes->get('/komentar/(:segment)', 'Buku::getallKomen/$1');
+$routes->post('/admin', 'Admin::index');
+$routes->post('/buku', 'Buku::index');

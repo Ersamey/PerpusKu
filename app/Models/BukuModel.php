@@ -11,6 +11,13 @@ class BukuModel extends Model
     protected $useTimestamps = true;
     protected $allowedFields = ['judul', 'pengarang', 'tahun', 'slug', 'pict'];
 
+    public function search($keyword)
+    {
+        $Builder = $this->table('buku');
+        $Builder->like('judul', $keyword);
+        $Builder->orlike('pengarang', $keyword);
+        return $Builder;
+    }
     public function getBuku($slug = false)
     {
         if ($slug == false) {

@@ -8,6 +8,13 @@ class AdminModel extends Model
 {
     protected $table = 'users';
 
+    public function search($keyword)
+    {
+        $Builder = $this->table('users');
+        $Builder->like('username', $keyword);
+        return $Builder;
+    }
+
     public function getAll()
     {
         return $this->findAll();
@@ -20,6 +27,7 @@ class AdminModel extends Model
         $builder->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id');
         return $builder->get()->getResultArray();
     }
+
 
     public function ubahRole($data)
     {
