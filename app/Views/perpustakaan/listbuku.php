@@ -55,7 +55,7 @@
                                 <td><?= $l['pengarang'] ?></td>
                                 <td><?= $l['status'] ?></td>
                                 <td>
-                                    <button class="btn btn-primary" onclick="toggleRoleForm(<?= $l['id_buku']; ?>)">Ubah Role</button>
+                                    <button class="btn btn-primary" onclick="toggleRoleForm(<?= $l['id_buku']; ?>)">Ubah</button>
                                     <div class="role" id="roleForm-<?= $l['id_buku']; ?>" style="display: none;">
                                         <form action="/tersedia/save" method="post">
                                             <?= csrf_field(); ?>

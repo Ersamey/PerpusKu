@@ -4,16 +4,18 @@ namespace App\Controllers;
 
 use App\Models\ReviewModel;
 use App\Models\PerpustakaanModel;
-use App\Models\BukuModel;
+use App\Controllers\Buku;
 
 class Review extends BaseController
 {
     protected $reviewModel;
     protected $perpustakaanModel;
+    protected $buku;
     public function __construct()
     {
         $this->reviewModel = new ReviewModel();
         $this->perpustakaanModel = new PerpustakaanModel();
+        $this->buku = new Buku();
     }
 
     public function index()
@@ -34,8 +36,9 @@ class Review extends BaseController
         ]);
 
         session()->setFlashdata('pesan', 'Review berhasil ditambahkan!');
-
-        return view('/buku/review');
+        // getallKomen($slug);
+        $data[] = $this->buku->getallKomen($buku["slug"]);
+        return view('/buku/review', $data);
     }
 
     public function myReview($id_user)
@@ -56,8 +59,8 @@ class Review extends BaseController
         $buku = $this->reviewModel->db->table('buku')->select('slug')->where('id_buku', $ripiu['buku_id'])->get()->getRowArray();
         $this->reviewModel->delete($id_review);
         session()->setFlashdata('pesan', 'Review berhasil dihapus!');
-
-        return view('/buku/review');
+        $data[] = $this->buku->getallKomen($buku["slug"]);
+        return view('/buku/review', $data);
     }
 
     public function edit()
@@ -78,7 +81,7 @@ class Review extends BaseController
             'review' => $this->request->getVar('review')
         ]);
         session()->setFlashdata('pesan', 'Review berhasil diubah!');
-
-        return view('/buku/review');
+        $data[] = $this->buku->getallKomen($buku["slug"]);
+        return view('/buku/review', $data);
     }
 }
