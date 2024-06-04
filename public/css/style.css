@@ -12,12 +12,12 @@
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 100vh; /* Mengambil tinggi penuh dari viewport */
+  height: 100vh;
   margin: 0;
   padding: 0;
   display: flex;
-  align-items: center; /* Menyelaraskan konten vertikal di tengah */
-  justify-content: center; /* Menyelaraskan konten horizontal di tengah */
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar {
@@ -43,7 +43,15 @@
 }
 
 .home {
-  padding: 5rem 2rem;
+  padding: 20rem 2rem;
+}
+
+.home-image {
+  position: absolute;
+  right: 0;
+  top: 4rem;
+  width: 200px;
+  height: 200px;
 }
 
 .gradient-text-welcome {
@@ -51,38 +59,50 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
+  font-size: 60px;
+  display: inline-block;
+}
+.gradient-text-nama {
+  color: #5465d9;
+  font-weight: bold;
+  font-size: 60px;
+  display: inline-block;
 }
 
 .text-perpusku {
   color: #5465d9;
   font-weight: bold;
+  font-size: 53px;
 }
 
 .btn-jelajah {
-  background-color: #374cde;
-  color: #ffffff;
+  padding: 8px 8px;
+  background: #374cde;
   border: none;
+  outline: none;
+  box-shadow: 0 0 10px #919ef5;
+  font-size: 16px;
+  color: rgb(252, 251, 251);
+  letter-spacing: 1px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 25x;
+  margin-bottom: 2px;
+  margin-right: 25px;
+  text-align: center;
 }
 
-.home-image {
-  position: absolute;
-  right: 0;
-  top: 4rem;
-  width: 450px;
-  height: 450px;
+.btn-addform:hover {
+  background: #4d63ee;
+  box-shadow: 0 0 20px #4d63ee;
 }
 
-.label {
-  padding-top: 60px;
+.contact {
+  padding-top: 115px;
 }
 
 .icon-link img {
   margin-right: 10px;
-}
-
-.form-control {
-  background: transparent;
-  border: 2px solid rgb(150, 190, 206);
 }
 
 .btn-contact {
@@ -112,6 +132,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
+  font-size: 55px;
 }
 
 .text-muted a {
@@ -181,6 +202,7 @@
   margin-top: 15x;
   transition: 0.5s, box-shadow 0.5s;
   margin-bottom: 20px;
+  margin-left: 0px;
 }
 
 .btn-add:hover {
@@ -210,7 +232,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
-  font-size: 55px;
+  font-size: 50px;
 }
 
 .card-kartu {
@@ -298,18 +320,17 @@
 
 /* style=" background-color: #99A1DB; border-color: #99A1DB; */
 .btn.btn-detail {
-  background: #99A1DB;
+  background: #99a1db;
   color: #ffffff;
   border: none;
 }
 
 .tersedia {
-  color: #3F2182;
+  color: #3f2182;
 }
 
 .plain-button.nama {
-  color: #5669DB;
-
+  color: #5669db;
 }
 
 .card-text.alamat {
@@ -359,4 +380,16 @@
 .btn.btn-success.dropdown-toggle {
   border-radius: 40px;
 }
+.detail {
+  padding-top: 80px;
+}
+
+.review {
+  padding-top: 390px;
+}
+
+.card-review {
+  background: linear-gradient(45deg, #ffffff, #e5f0ff, #d4e6ff, #b9d7ff, #d4e6ff, #e5f0ff, #ffffff);
+}
+
 /*  main */

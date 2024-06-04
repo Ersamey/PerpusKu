@@ -2,34 +2,34 @@
 
 <?= $this->section('content'); ?>
 
-<div class="label">
+<div class="contact bg-belakang">
 <div class="container">
     <form action="https://formsubmit.co/sitinuraeni8754@gmail.com" method="POST">
         <div class="row justify-content-between">
             <div class="col-md-6 ">
-                <div class=" mb-4 ml-2">
+                <div class=" mb-4">
                     <label for="name" class="form-label">Nama</label>
-                    <input type="text" class="form-control" id="name" placeholder="">
+                    <input type="text" class="form-control-edit" id="name" placeholder="">
                 </div>
                 <div class="mb-4">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="">
+                    <input type="email" class="form-control-edit" id="email" placeholder="">
                 </div>
                 <div class="mb-4">
                     <label for="phone" class="form-label">No Telepon</label>
-                    <input type="text" class="form-control" id="phone" placeholder="">
+                    <input type="text" class="form-control-edit" id="phone" placeholder="">
                 </div>
                 <div class="mb-4">
                     <label for="message" class="form-label">Pesan</label>
-                    <textarea class="form-control" id="message" rows="3"></textarea>
+                    <textarea class="form-control-edit" id="message" rows="3"></textarea>
                 </div>
                 <button type="submit" class="btn-contact">Send</button>
             </div>
     </form>
             <div class="col-md-4">
-                <h1 class="display-4 gradient-text-contact">Contact Us</h1>
+                <h1 class="gradient-text-contact">Contact Us</h1>
                 <div class="col pt-4">
-                    <p>Silahkan hubungi kontak yang tertera  apabila terdapat keluhan ataupun pertanyaan!!</p>
+                    <p > Silahkan hubungi kontak yang tertera  apabila terdapat keluhan ataupun pertanyaan!!</p>
                     <div class="icon-link d-block mb-3 pt-3">
                         <img src="<?= base_url() ?>/img/map.png" alt="map" width="34px" height="45px">
                         <span class="text-muted">

@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row mt-3">
         <div class="col-12 mb-1">
-        <h1 class="gradient-text mt-5 pt-4">Add Buku</h1>
+        <h1 class="gradient-text mt-5 pt-4">Silahkan Tambahkan Buku</h1>
             <button onclick="addForm()" class="btn-addform">+addForm</button>
         </div>
 
