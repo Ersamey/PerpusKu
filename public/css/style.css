@@ -422,4 +422,18 @@
 .sembunyi {
   padding-top: 700px;
 }
+
+.gradient-text-admin {
+  background: linear-gradient(#000000, #031794);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: left;
+  font-size: 50px;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>td:nth-child(odd)>th {
+ background-color: rgb(151, 165, 244);
+}
+
 /*  main */
