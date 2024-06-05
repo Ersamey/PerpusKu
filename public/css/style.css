@@ -2,7 +2,7 @@
   width: 100px;
 }
 
-.table > tbody > tr > * {
+.table>tbody>tr>* {
   vertical-align: middle;
 }
 
@@ -432,8 +432,8 @@
   font-size: 50px;
 }
 
-.table-striped > tbody > tr:nth-child(odd) > td,
-.table-striped > tbody > td:nth-child(odd) > th {
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>td:nth-child(odd)>th {
   background-color: rgb(151, 165, 244);
 }
 
@@ -461,8 +461,7 @@
   text-align: center;
   font-size: 35px;
 }
-/*  main */
-=======
+
 .login {
   padding-top: 150px;
   background-image: url("../img/Signin.jpg");
@@ -530,3 +529,14 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+
+.detailperpus {
+  padding-top: 70px;
+  background-image: url("/img/bg-detail.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: auto;
+  width: 100%;
+  height: 100vh;
+}
