@@ -13,12 +13,8 @@
                     </div>
                 </div>
             </form>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Autem nihil minus, quasi eum perspiciatis fugiat inventore
-                commodi amet necessitatibus sint perferendis pariatur
-                excepturi aut labore eveniet at, quam repudiandae quis.</p>
-            <br>
 
+            <br>
 
             <h1 class=" mt-2">Daftar Buku</h1>
             <?php if (in_groups('admin')) : ?>

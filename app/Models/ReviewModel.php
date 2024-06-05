@@ -16,6 +16,8 @@ class ReviewModel extends Model
         $id = $this->db->table('buku')->select('id_buku')->where('slug', $slug)->get()->getRowArray();
         $builder = $this->table('review');
         $builder->join('users', 'users.id = review.user_id');
+        //urutkan dari yang terbaru
+        $builder->orderBy('review.id_review', 'DESC');
         $join = $builder->get()->getResultArray();
         $komentar = [];
         foreach ($join as $j) {

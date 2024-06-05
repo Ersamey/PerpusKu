@@ -30,10 +30,16 @@
           <?php elseif (in_groups('perpustakaan')) : ?>
             <a class="nav-link" href="/perpustakaan/buku">Manajemen Buku</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/user/<?= $user; ?>">myProfile</a>
+            </li>
           <?php endif; ?>
           <li class="nav-item">
-            <a class="nav-link" href="/user/<?= $user; ?>">myProfile</a>
+            <a class="nav-link" href="/logout ?>">Logout</a>
           </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/user/<?= $user; ?>">myProfile</a>
+          </li> -->
         <?php endif; ?>
       </ul>
     </div>
