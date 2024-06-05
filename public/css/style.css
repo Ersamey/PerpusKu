@@ -2,7 +2,7 @@
   width: 100px;
 }
 
-.table>tbody>tr>* {
+.table > tbody > tr > * {
   vertical-align: middle;
 }
 
@@ -433,8 +433,8 @@
   font-size: 50px;
 }
 
-.table-striped>tbody>tr:nth-child(odd)>td,
-.table-striped>tbody>td:nth-child(odd)>th {
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > td:nth-child(odd) > th {
   background-color: rgb(151, 165, 244);
 }
 
@@ -450,4 +450,15 @@
   /* Mengatur konten dalam flex container ke kanan */
 }
 
+.list-buku-home {
+  padding-top: 100vh;
+}
+
+.h1-listbuku {
+  background: linear-gradient(#000000, #031794);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-size: 35px;
+}
 /*  main */

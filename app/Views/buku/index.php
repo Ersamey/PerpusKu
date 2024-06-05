@@ -1,10 +1,12 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
+<div class="bg-belakang">
+<div class="list-buku-home">  
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>Mau Baca Buku Apa Hari Ini?</h1>
+        <h1 class="h1-listbuku pt-1 mb-4">Mau Baca Buku Apa Hari Ini?</h1>
             <form action="" method="post">
                 <div class="input-group mb-3">
                     <input type="text" class="form-control mt-2" placeholder="Cari buku" name="keyword">
@@ -16,7 +18,7 @@
 
             <br>
 
-            <h1 class=" mt-2">Daftar Buku</h1>
+            <h1 class="h1-listbuku mb-4">DAFTAR BUKU</h1>
             <?php if (in_groups('admin')) : ?>
                 <a href="/buku/add" class="btn btn-primary">Tambah Buku</a>
             <?php endif; ?>
@@ -42,5 +44,7 @@
             </div>
         </div>
     </div>
+</div>
+</div>
 </div>
 <?= $this->endSection(); ?>
