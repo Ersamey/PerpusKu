@@ -162,7 +162,6 @@
   text-decoration: none;
 }
 
-/* <<<<<<< add_buku */
 .form-control-add {
   width: 100%;
   padding: 5px;
@@ -449,5 +448,73 @@
   justify-content: start;
   /* Mengatur konten dalam flex container ke kanan */
 }
+
+.login {
+  padding-top: 150px;
+  background-image: url("../img/Signin.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: auto;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* Menyusun ke kanan */
+}
+
+.login .container {
+  display: flex;
+  justify-content: flex-end;
+  /* Menyusun ke kanan */
+  width: 100%;
+}
+
+.login .card {
+  margin-right: 20px;
+  /* Menambahkan sedikit margin kanan */
+  opacity: 0.9;
+  /* Membuat card sedikit transparan */
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Memastikan background card juga transparan */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Menambahkan bayangan agar terlihat lebih menarik */
+}
+
+.register {
+  padding-top: 150px;
+  background-image: url("../img/SignUp.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: auto;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.register .container {
+  padding-top: 50px;
+  display: flex;
+  justify-content: flex-start;
+  /* Menyusun ke kiri */
+  width: 100%;
+}
+
+.register .card {
+  opacity: 0.7;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 
 /*  main */
