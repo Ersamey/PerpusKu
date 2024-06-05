@@ -9,7 +9,7 @@
         <h1 class="h1-listbuku pt-1 mb-4">Mau Baca Buku Apa Hari Ini?</h1>
             <form action="" method="post">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control mt-2" placeholder="Cari buku" name="keyword">
+                    <input type="text" class="form-control" placeholder="Cari buku" name="keyword">
                     <div class="input-group-append">
                         <button type="submit" class="btn btn-primary" name="submit">Search</button>
                     </div>
