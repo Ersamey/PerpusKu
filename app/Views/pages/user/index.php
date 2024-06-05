@@ -2,17 +2,18 @@
 
 <?= $this->section('content'); ?>
 
-<div class="profil">
+<div class="profil bg-belakang">
 <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col mb-4">
+        <h1 class="gradient-text mt-4 pt-4">My Profil</h1>
             <!-- Logout -->
-            <div class="logout mt-3">
+            <!-- <div class="logout mt-3">
                 <a href="/logout" class="btn btn-danger">Logout</a>
-            </div>
+            </div> -->
             <!-- Edit profile -->
-            <div class="edit-profile mt-3">
-                <button onclick="editfunct()" class="btn btn-warning">Edit Profile</button>
+            <div class="edit-profil mb-3">
+                <button onclick="editfunct()" class="btn" style="background-color:#374cde; color: white;">Edit Profile</button>
                 <div id="myDIV" style="display: none;">
                     <h1>Hallo</h1>
                     <script>
@@ -28,19 +29,21 @@
                 </div>
             </div>
 
+            <div class="card-kartu shadow-lg p-3 mb-3">
+            <div class="card-body">
             <?php
             $username  =   user()->username;
             $email     =   user()->email;
             ?>
-            <div class="profile mt-4">
+            <div class="profile">
                 <table>
                     <tr>
-                        <td>Username</td>
+                        <td><b>Username</b></td>
                         <td>:</td>
                         <td><?= $username; ?></td>
                     </tr>
                     <tr>
-                        <td>Email</td>
+                        <td><b>Email</b></td>
                         <td>:</td>
                         <td><?= $email; ?></td>
                     </tr>
@@ -56,29 +59,26 @@
                         </div>
                     <?php endif;
                     if ($perpustakaan != null) : ?>
-                        <div class="card">
-                            <div class="card-body">
+
+                                <h4 class="pt-1">Lokasi</h4>
                                 <b>Nama:</b>
                                 <p id="nama"><?= $perpustakaan['nama']; ?></p>
-                                <button class="btn btn-warning" onclick="toggleEditForm('formNama')">Edit</button>
+                                <button class="btn mb-2 mt-1" style="background-color:#374cde; color: white;" onclick="toggleEditForm('formNama')">Edit</button>
                                 <form id="formNama" action="/home/editNama" method="post" style="display: none;">
                                     <input type="text" name="nama" value="<?= $perpustakaan['nama']; ?>">
                                     <input type="hidden" name="id_perpus" value="<?= $perpustakaan['id_perpus']; ?>">
                                     <button type="submit" class="btn btn-primary">Save</button>
                                 </form>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <b>Alamat:</b>
+                           
+                               <br> <b>Alamat:</b></br>
                                 <p id="alamat"><?= $perpustakaan['alamat']; ?></p>
-                                <button class="btn btn-warning" onclick="toggleEditForm('formAlamat')">Edit</button>
+                                <button class="btn" style="background-color:#374cde; color: white;" onclick="toggleEditForm('formAlamat')">Edit</button>
                                 <form id="formAlamat" action="/home/editAlamat" method="post" style="display: none;">
                                     <input type="text" name="alamat" value="<?= $perpustakaan['alamat']; ?>">
                                     <input type="hidden" name="id_perpus" value="<?= $perpustakaan['id_perpus']; ?>">
                                     <button type="submit" class="btn btn-primary">Save</button>
                                 </form>
-                            </div>
+                             </div>
                         </div>
                     <?php else : ?>
                         <p>Anda belum memiliki profile</p>
