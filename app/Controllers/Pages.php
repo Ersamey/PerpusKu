@@ -50,4 +50,12 @@ class Pages extends BaseController
         ];
         return view('/auth/signIn', $data);
     }
+
+    public function register()
+    {
+        $data = [
+            'title' => 'Register | Perpusku'
+        ];
+        return view('/auth/register', $data);
+    }
 }
