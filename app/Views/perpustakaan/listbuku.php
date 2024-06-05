@@ -43,9 +43,9 @@
                                 <?= session()->getFlashdata('pesan'); ?>
                             </div>
                         <?php endif; ?>
-                        <table class="table">
+                        <table class="table table-bordered table-striped" style='text-align:center; vertical-align:middle'>
                             <thead>
-                                <tr>
+                                <tr >
                                     <th scope="col">ID</th>
                                     <th scope="col">Judul</th>
                                     <th scope="col">Penulis</th>
@@ -53,6 +53,7 @@
                                     <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
+                    
                             <tbody>
                                 <?php $i = 1; ?>
                                 <?php foreach ($list as $l) : ?>
@@ -93,6 +94,7 @@
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
+                         
                         </table>
                     </div>
                 </div>

@@ -11,6 +11,8 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: auto;
   width: 100%;
   height: 100vh;
   margin: 0;
@@ -44,6 +46,7 @@
 
 .home {
   padding: 20rem 2rem;
+  overflow: hidden;
 }
 
 .home-image {
@@ -264,6 +267,7 @@
 .edit {
   padding-top: 50px;
 }
+
 .btn-edit {
   position: absolute;
   top: 100%;
@@ -392,33 +396,19 @@
   background: linear-gradient(45deg, #ffffff, #e5f0ff, #d4e6ff, #b9d7ff, #d4e6ff, #e5f0ff, #ffffff);
 }
 .profil {
-  padding-top: 100px;
+  padding-top: 50px;
 }
 
 .listbuku {
   padding-top: 150px;
 }
-
-.table {
-  background-color: rgb(149, 169, 221);
-}
-
 .table th {
-  background-color: #99acff;
   color: white;
-  border-right: 5px solid white;
-  text-align: center;
+  border: none;
 }
-
-.table td {
-  background-color: #e3e8ff;
-  border-right: 5px solid white;
+.table tr {
+  background-color: rgb(192, 198, 233);
 }
-.table th,
-.table td {
-  border: 4px solid white;
-}
-
 .sembunyi {
   padding-top: 700px;
 }
@@ -431,9 +421,17 @@
   font-size: 50px;
 }
 
-.table-striped>tbody>tr:nth-child(odd)>td,
-.table-striped>tbody>td:nth-child(odd)>th {
- background-color: rgb(151, 165, 244);
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > td:nth-child(odd) > th {
+  background-color: rgb(151, 165, 244);
 }
 
+.logout {
+  display: flex;
+  justify-content: flex-end; /* Mengatur konten dalam flex container ke kanan */
+}
+.edit-profil {
+  display: flex;
+  justify-content: start; /* Mengatur konten dalam flex container ke kanan */
+}
 /*  main */
