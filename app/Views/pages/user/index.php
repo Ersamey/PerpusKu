@@ -39,7 +39,6 @@
                                     </div>
                                 <?php endif;
                                 if ($perpustakaan != null) : ?>
-
                                     <h4 class="pt-1">Lokasi</h4>
                                     <b>Nama:</b>
                                     <p id="nama"><?= $perpustakaan['nama']; ?></p>
@@ -49,7 +48,6 @@
                                         <input type="hidden" name="id_perpus" value="<?= $perpustakaan['id_perpus']; ?>">
                                         <button type="submit" class="btn btn-primary">Save</button>
                                     </form>
-
                                     <br> <b>Alamat:</b></br>
                                     <p id="alamat"><?= $perpustakaan['alamat']; ?></p>
                                     <button class="btn" style="background-color:#374cde; color: white;" onclick="toggleEditForm('formAlamat')">Edit</button>

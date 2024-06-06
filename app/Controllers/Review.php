@@ -36,7 +36,6 @@ class Review extends BaseController
         ]);
 
         session()->setFlashdata('pesan', 'Review berhasil ditambahkan!');
-        // getallKomen($slug);
         $data[] = $this->buku->getallKomen($buku["slug"]);
         return view('/buku/review', $data);
     }

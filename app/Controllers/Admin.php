@@ -14,7 +14,6 @@ class Admin extends BaseController
 
     public function index()
     {
-        // d($this->request->getVar('keyword'));
         $keyword = $this->request->getVar('keyword');
         if ($keyword) {
             $this->adminModel->search($keyword);
@@ -33,7 +32,6 @@ class Admin extends BaseController
     public function ubahRole()
     {
         $requestData = $this->request->getVar();
-        // Call the model's method and pass the request data
         $result = $this->adminModel->ubahRole($requestData);
 
         $data = [

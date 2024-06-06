@@ -1,5 +1,5 @@
 <?php
-//sebenernya ini ga di pakai, cuma buat cek tampilan aja
+
 namespace App\Controllers;
 
 use App\Models\KetersediaanModel;
@@ -15,16 +15,6 @@ class Tersedia extends BaseController
         $this->bukuModel = new BukuModel();
     }
 
-    public function index($slug)
-    {
-        $data = [
-            'tersedia' => $this->ketersediaanModel->getAll($slug)
-        ];
-
-        // return view('buku/index', $data);
-        return dd($data);
-    }
-
     public function add()
     {
         $perpus = $this->ketersediaanModel->getPerpus(user_id());
@@ -33,7 +23,6 @@ class Tersedia extends BaseController
             'perpus_id' => $perpus['id_perpus'],
             'status' => 'Tersedia'
         ]);
-        //session
         session()->setFlashdata('pesan', 'Buku berhasil ditambahkan.');
         return redirect()->to('/perpustakaan/buku');
     }

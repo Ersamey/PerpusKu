@@ -100,18 +100,13 @@ class Buku extends BaseController
             }
         }
 
-        // Simpan setiap set data
         foreach ($judulArray as $index => $judul) {
-            // Ambil file sampul
             if (isset($sampulArray['file'][$index])) {
                 $fileSampul = $sampulArray['file'][$index];
-                // Apakah tidak ada gambar yang diupload
                 if ($fileSampul->getError() == 4) {
                     $namaSampul = 'default.jpg';
                 } else {
-                    // Generate nama sampul dari file yang di upload
                     $namaSampul = $fileSampul->getRandomName();
-                    // Pindahkan file ke folder img
                     $fileSampul->move('img', $namaSampul);
                 }
             } else {
@@ -133,15 +128,9 @@ class Buku extends BaseController
 
     public function delete($id)
     {
-        // Cari gambar berdasarkan id
         $buku = $this->bukuModel->find($id);
-
-        // Cek jika file gambarnya default.jpg
         if ($buku['pict'] != 'default.jpg') {
-            // Hapus gambar
-            // unlink('img/' . $buku['pict']);
         }
-
         $this->bukuModel->delete($id);
         return redirect()->to('/buku');
     }
@@ -186,7 +175,7 @@ class Buku extends BaseController
     public function listbuku()
     {
         $keyword = $this->request->getVar('keyword');
-        $list=$this->ketersediaanModel->ListBukuPerpustakaan(user_id(), $keyword);
+        $list = $this->ketersediaanModel->ListBukuPerpustakaan(user_id(), $keyword);
 
         $data = [
             'title' => 'Perpustakaan | Daftar Buku',

@@ -11,18 +11,9 @@ class Pages extends BaseController
         $username = session()->get("username");
         $data = [
             'title' => 'Home | Perpusku',
-            'tes' => ['satu', 'dua', 'tiga'],
             'username' => $username
         ];
         return view('pages/home', $data);
-    }
-
-    public function about()
-    {
-        $data = [
-            'title' => 'About | Perpusku'
-        ];
-        return view('pages/about', $data);
     }
 
     public function contact()
@@ -44,7 +35,6 @@ class Pages extends BaseController
         ];
         return view('pages/contact', $data);
     }
-
 
     public function register()
     {
