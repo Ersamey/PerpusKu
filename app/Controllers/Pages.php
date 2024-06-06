@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use Myth\Auth\Config\Auth as AuthConfig;
+
 class Pages extends BaseController
 {
     public function index()
@@ -43,19 +45,22 @@ class Pages extends BaseController
         return view('pages/contact', $data);
     }
 
-    public function login()
-    {
-        $data = [
-            'title' => 'Login | Perpusku'
-        ];
-        return view('/auth/signIn', $data);
-    }
 
     public function register()
     {
         $data = [
-            'title' => 'Register | Perpusku'
+            'title' => 'Register | Perpusku',
+            'config' => new AuthConfig()
         ];
         return view('/auth/register', $data);
+    }
+
+    public function login()
+    {
+        $data = [
+            'title' => 'Login | Perpusku',
+            'config' => new AuthConfig()
+        ];
+        return view('/auth/signIn', $data);
     }
 }

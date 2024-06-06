@@ -37,5 +37,5 @@ $routes->get('/komentar/(:segment)', 'Buku::getallKomen/$1');
 $routes->post('/admin', 'Admin::index');
 $routes->post('/buku', 'Buku::index');
 $routes->post('/perpustakaan/buku', 'Buku::listbuku');
-$routes->get('/auth/signIn', 'Pages::login'); //buat cek doang klo udh gk di pake hapus!
-$routes->get('/auth/register', 'Pages::register'); //buat cek doang klo udh gk di pake hapus!
+$routes->get('/login', 'Pages::login');
+$routes->get('/register', 'Pages::register');
