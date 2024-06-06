@@ -451,7 +451,7 @@
 
 
 .list-buku-home {
-  padding-top: 100vh;
+  padding-top: 50vh;
 }
 
 .h1-listbuku {
@@ -539,4 +539,17 @@
   overflow: auto;
   width: 100%;
   height: 100vh;
+}
+
+.bg-belakang-list-user {
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: auto;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding-top: 20;
 }

@@ -57,7 +57,7 @@ class Home extends BaseController
     public function editAlamat()
     {
         $user = user_id();
-        $alamat = $this->request->getVar('alamat'); //alamat baru   
+        $alamat = $this->request->getVar('alamat');
         $id_perpus = $this->request->getVar('id_perpus');
         $this->perpustakaan->save([
             'id_perpus' => $id_perpus,
